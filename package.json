@@ -1,0 +1,29 @@
+{
+  "name": "educase",
+  "version": "1.0.0",
+  "description": "Assignment for company interview Educase",
+  "scripts": {
+    "test": "jext",
+    "start": "parcel index.html",
+    "build": "parcel build index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/anjulsharma010/Educase.git"
+  },
+  "author": "anjul sharma",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/anjulsharma010/Educase/issues"
+  },
+  "homepage": "https://github.com/anjulsharma010/Educase#readme",
+  "devDependencies": {
+    "parcel": "^2.12.0",
+    "process": "^0.11.10"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.22.3"
+  }
+}
