@@ -1,43 +1,26 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import CreateAccount from "./components/CreateAccount";
+import Home from "./components/Home";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Login from "./components/Login";
-import Welcome from "./components/Welcome";
-import Dashboard from "./components/Dashboard";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import Error from "./components/Error";
+import Signup from "./components/Signup";
+import Account from "./components/Account";
+import Nopage from "./components/Nopage";
 
-
-const AppLayout = ()=> {
-    return (
-        <>
-        <CreateAccount />
-        <Login />
-        <Welcome />
-        <Dashboard />
-        </>
-    )
-}
-
-const appRouter = createBrowserRouter([
-    {
-        path: "/",
-        element: <AppLayout />,
-        errorElement: <Error />
-    },
-    {
-        path: "/signup",
-        element: <CreateAccount />
-    },
-    {
-        path: "/login",
-        element: <Login />
-    },
-    {
-        path: "/dashboard",
-        element: <Dashboard />
-    }
-])
+const AppLayout = () => {
+  return (
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<Signup />} />
+        <Route path="login/account" element={<Account />} />
+        <Route path="signup/account" element={<Account />} />
+        <Route path="*" element={<Nopage />} />
+      </Routes>
+    </Router>
+  );
+};
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<RouterProvider router={appRouter} />)
+root.render(<AppLayout />);
